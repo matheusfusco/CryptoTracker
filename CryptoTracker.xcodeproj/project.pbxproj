@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		5E0FF211229EE5F400903F3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FF210229EE5F400903F3E /* AppDelegate.swift */; };
-		5E0FF213229EE5F400903F3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FF212229EE5F400903F3E /* ViewController.swift */; };
-		5E0FF216229EE5F400903F3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0FF214229EE5F400903F3E /* Main.storyboard */; };
 		5E0FF218229EE5F600903F3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E0FF217229EE5F600903F3E /* Assets.xcassets */; };
 		5E0FF21B229EE5F600903F3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0FF219229EE5F600903F3E /* LaunchScreen.storyboard */; };
+		5E0FF223229EE65700903F3E /* CryptoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FF222229EE65700903F3E /* CryptoTableViewController.swift */; };
+		5E0FF225229EE7D700903F3E /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FF224229EE7D700903F3E /* CoinData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5E0FF20D229EE5F400903F3E /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0FF210229EE5F400903F3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E0FF212229EE5F400903F3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5E0FF215229EE5F400903F3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E0FF217229EE5F600903F3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E0FF21A229EE5F600903F3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E0FF21C229EE5F600903F3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E0FF222229EE65700903F3E /* CryptoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewController.swift; sourceTree = "<group>"; };
+		5E0FF224229EE7D700903F3E /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				5E0FF210229EE5F400903F3E /* AppDelegate.swift */,
-				5E0FF212229EE5F400903F3E /* ViewController.swift */,
-				5E0FF214229EE5F400903F3E /* Main.storyboard */,
 				5E0FF217229EE5F600903F3E /* Assets.xcassets */,
 				5E0FF219229EE5F600903F3E /* LaunchScreen.storyboard */,
 				5E0FF21C229EE5F600903F3E /* Info.plist */,
+				5E0FF222229EE65700903F3E /* CryptoTableViewController.swift */,
+				5E0FF224229EE7D700903F3E /* CoinData.swift */,
 			);
 			path = CryptoTracker;
 			sourceTree = "<group>";
@@ -124,7 +124,6 @@
 			files = (
 				5E0FF21B229EE5F600903F3E /* LaunchScreen.storyboard in Resources */,
 				5E0FF218229EE5F600903F3E /* Assets.xcassets in Resources */,
-				5E0FF216229EE5F400903F3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +134,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E0FF213229EE5F400903F3E /* ViewController.swift in Sources */,
+				5E0FF225229EE7D700903F3E /* CoinData.swift in Sources */,
+				5E0FF223229EE65700903F3E /* CryptoTableViewController.swift in Sources */,
 				5E0FF211229EE5F400903F3E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +143,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5E0FF214229EE5F400903F3E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5E0FF215229EE5F400903F3E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5E0FF219229EE5F600903F3E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
