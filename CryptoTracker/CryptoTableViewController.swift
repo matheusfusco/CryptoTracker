@@ -13,6 +13,8 @@ class CryptoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
+        CoinData.shared.delegate = self
+        CoinData.shared.getPrices()
     }
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -31,8 +33,14 @@ class CryptoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let coin = CoinData.shared.coins[indexPath.row]
-        cell.textLabel?.text = coin.symbol
+        cell.textLabel?.text = coin.symbol + " - \(coin.priceAsString())"
         cell.imageView?.image = coin.image
         return cell
+    }
+}
+
+extension CryptoTableViewController: CoinDataDelegate {
+    func newPrices() {
+        self.tableView.reloadData()
     }
 }
