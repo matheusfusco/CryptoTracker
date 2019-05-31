@@ -11,6 +11,7 @@ import Alamofire
 
 @objc protocol CoinDataDelegate: class {
     @objc optional func newPrices()
+    @objc optional func newHistory()
 }
 
 class CoinData {
@@ -48,6 +49,13 @@ class CoinData {
             }
         }
     }
+    
+    func doubleToCurrencyString(_ double: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.numberStyle = .currency
+        return formatter.string(from: NSNumber(floatLiteral: double)) ?? "ERROR"
+    }
 }
 
 class Coin  {
@@ -68,9 +76,22 @@ class Coin  {
         if price == 0 {
             return "Loading..."
         }
-        let formatter = NumberFormatter()
-        formatter.locale = Locale(identifier: "en_US")
-        formatter.numberStyle = .currency
-        return formatter.string(from: NSNumber(floatLiteral: price)) ?? "ERROR"
+        return CoinData.shared.doubleToCurrencyString(price)
+    }
+    
+    func getHistoricalData() {
+        Alamofire.request("https://min-api.cryptocompare.com/data/histoday?fsym=\(symbol)&tsym=USD&limit=30").responseJSON { (response) in
+            if let json = response.result.value as? [String: Any] {
+                if let pricesJSON = json["Data"] as? [[String: Double]] {
+                    self.historicalData = []
+                    for priceJSON in pricesJSON {
+                        if let closePrice = priceJSON["close"] {
+                            self.historicalData.append(closePrice)
+                        }
+                    }
+                    CoinData.shared.delegate?.newHistory?()
+                }
+            }
+        }
     }
 }

@@ -19,6 +19,9 @@ class CryptoTableViewController: UITableViewController {
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let coinDetailViewController = CoinDetailViewController()
+        coinDetailViewController.coin = CoinData.shared.coins[indexPath.row]
+        navigationController?.pushViewController(coinDetailViewController, animated: true)
     }
     
     // MARK: - Table view data source
