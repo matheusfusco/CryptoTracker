@@ -15,6 +15,7 @@ class CryptoTableViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         CoinData.shared.delegate = self
         CoinData.shared.getPrices()
+        self.navigationController?.navigationBar.topItem?.title = " "
     }
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

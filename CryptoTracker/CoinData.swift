@@ -49,13 +49,6 @@ class CoinData {
             }
         }
     }
-    
-    func doubleToCurrencyString(_ double: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.locale = Locale(identifier: "en_US")
-        formatter.numberStyle = .currency
-        return formatter.string(from: NSNumber(floatLiteral: double)) ?? "ERROR"
-    }
 }
 
 class Coin  {
@@ -76,7 +69,7 @@ class Coin  {
         if price == 0 {
             return "Loading..."
         }
-        return CoinData.shared.doubleToCurrencyString(price)
+        return price.formatCurrency()
     }
     
     func getHistoricalData() {
