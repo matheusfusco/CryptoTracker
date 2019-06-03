@@ -17,6 +17,12 @@ class CryptoTableViewController: UITableViewController {
         CoinData.shared.getPrices()
         self.navigationController?.navigationBar.topItem?.title = " "
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
